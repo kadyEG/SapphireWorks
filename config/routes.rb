@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'guest/index'
+
+  devise_for :users
+  # get 'guest_controller/index'
+
+
+  root to: "guest#index"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
