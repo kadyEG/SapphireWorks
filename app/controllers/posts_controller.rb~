@@ -23,6 +23,6 @@ def create
 end
 private
   def post_params
-    params.require(:post).permit(:title, :body, :videourl)
+    params.require(:post).permit(:title, :body)
   end
 end
