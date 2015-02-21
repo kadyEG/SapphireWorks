@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'guest/index'
+  # get 'guest/index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
-  devise_for :users
+  # devise_for :users
   # get 'guest_controller/index'
 
 
