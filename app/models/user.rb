@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_picture, :content_type => /\Aimage\/.*\Z/
 
   has_many :comments
+  has_many :posts
 end
