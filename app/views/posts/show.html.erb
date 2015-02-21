@@ -1,6 +1,6 @@
-<% if user_signed_in? %>
+
 <p>
-  <strong>Tag:</strong>
+  <strong>Title:</strong>
   <%= @post.title %>
 </p>
  
@@ -9,6 +9,7 @@
   <%= @post.body %>
   
 </p>
+
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>
@@ -20,10 +21,22 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+
+  <% if user_signed_in? %>
+
+  <% if comment.user_id == current_user.email %>
+  <p>
+  <%= link_to 'Delete comment', [comment.post, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+               <%else %>
+               <% end %>
+</p>
+
 <% end %>
+<%end%>
 
-
-
+<% if user_signed_in? %>
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
@@ -36,12 +49,13 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>
-
+  <%= link_to 'Back', posts_path(@post) %> 
+<%end%>
  
 
-<%= link_to 'Back', posts_path(@post) %> 
+
 <% else %> 
-  <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
+  <h3>Please login to add comment.</h3>
+  <%= link_to 'Login  ', new_user_session_path %>
+<%= link_to 'Back', posts_path(@post) %> 
 <%end%>
