@@ -8,7 +8,9 @@
 
   <%= image_tag current_user.profile_picture.url(:thumb) %></br></br>
 
-  <%= link_to 'VIEW POST', posts_path %>
+  <%= link_to 'VIEW POST', posts_path %></br></br>
+
+  <%= link_to 'Edit Profile', edit_user_registration_path(current_user), :method => :get %></br></br>
 
   <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
 
