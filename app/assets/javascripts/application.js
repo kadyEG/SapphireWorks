@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.min
 //= require turbolinks
 //= require easing
-//= require jquery.min
 //= require move-top
 //= require_tree .
 //= require tinymce
