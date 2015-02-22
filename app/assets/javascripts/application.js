@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require easing
+//= require jquery.min
+//= require move-top
 //= require_tree .
