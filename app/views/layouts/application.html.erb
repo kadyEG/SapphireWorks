@@ -46,7 +46,7 @@
       <div class="header">
          <div class="container">
             <div class="logo">
-               <a href="index.html">
+               <a href="/">
                   <img src="http://placehold.it/150x50&text=Logo" />
                </a>
             </div>
@@ -58,6 +58,17 @@
                   <li class="active">
                     <%= link_to 'HOME', :root  %>
                   </li>
+
+                  <!-- Checking if user is logged in then add logout tab , and vice-versa -->
+                  <% if user_signed_in? %>
+                        <li>
+                          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                        </li>
+                  <% else %>
+                    <li>
+                          <%= link_to 'Login', new_user_session_path %>
+                    </li>
+                  <% end %>
 
 									<!-- TODO Add login ,settings and team page -->
                   <div class="clearfix"> </div>
