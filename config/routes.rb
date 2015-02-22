@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'profiles/sherif'
+
+  get 'profiles/kady'
+
+  get 'profiles/abdelrahman'
+
+  get 'profiles/yassin'
+
+  get 'profiles/hussein'
+
+  get 'profiles/mohamed'
+
+  get 'profiles/aly'
+
   # get 'guest/index'
   devise_for :users, :controllers => { registrations: 'registrations' }
 
