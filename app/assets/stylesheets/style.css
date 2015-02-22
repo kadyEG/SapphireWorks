@@ -28,7 +28,7 @@ ul,label{
 }
 /*----start-container---*/
 .banner{
-	background:url(/assets/banner.jpg) no-repeat 0px 0px;
+	background:url(/assets/banner.png) no-repeat 0px 0px;
 	background-size: 100%;
 	min-height:340px;
 }
@@ -53,10 +53,10 @@ height:80px;
 border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 .top-menu ul li a{
-	background:rgba(246, 197, 112, 0.34);
+  	background:rgba(116, 252, 209, 0);
 	margin: 2em 2.5em;
 	display: block;
-	color: #54332A;
+	color: #9bfff1;
 	font-weight:400;
 	font-size:0.9em;
 	text-decoration:none;
@@ -66,7 +66,7 @@ border-left: 1px solid rgba(255, 255, 255, 0.2);
 	-o-transition: 0.5s all;
 }
 .top-menu ul li a:hover,.top-menu ul li.active a{
-color:#E82806;
+color:#44c1ff;
 }
 .banner-head{
 text-align:center;
@@ -87,7 +87,7 @@ font-weight:100;
 letter-spacing:1px;
 }
 .banner-links ul{
-background:#FFC600;
+background:#110073;
 }
 .banner-links ul li{
 float:left;
@@ -95,12 +95,12 @@ display:inline-block;
 border-right:1px solid rgba(255, 255, 255, 0.39);
 }
 .banner-links ul li.active a,.banner-links ul li a:hover{
-background:#EB5A41;
+background:#414fed;
 color:#fff;
 }
 .banner-links ul li a{
 display:block;
-color:#E9330C;
+  color:#0b87ec;
 padding:1.2em 2em;
 font-size:1em;
 text-decoration:none;
@@ -121,7 +121,7 @@ padding:0.8em 1em;
 }
 .content-grid-head h3{
 float:left;
-color:#E9330C;
+color:#0b42ec;
 font-size:1.1em;
 }
 .content-grid-head h4{
@@ -290,7 +290,7 @@ color:#EB5A41;
 }
 /*----*/
 .fotter{
-background:#E4573F;
+background:#0f1e80;
 }
 .fotter-info{
 border-right:1px solid rgba(255, 255, 255, 0.13);
@@ -298,7 +298,7 @@ padding:0;
 padding-bottom:1.8em;
 }
 .fotter-info h3,.fotter-list h3,.fotter-media h3{
-color:#FFC600;
+color:#53a6ff;
 font-size:1.1em;
 padding-top:2.5em;
 }
@@ -321,14 +321,14 @@ width:90%;
 }
 .fotter-list ul li a{
 padding:8px 0;
-color:#F4D0BF;
+color:#c4e2f8;
 text-decoration:none;
 font-family: 'Source Sans Pro', sans-serif;
 font-size:0.9em;
 display:block;
 }
 .fotter-list ul li a:hover{
-color:#FFC600;
+color:#010063;
 }
 .fotter-list ul li:nth-child(1){
 margin-top:5px;
@@ -375,7 +375,7 @@ transition: 0.5s all;
 	-o-transition: 0.5s all;
 }
 .copywrite {
-background: #65443A;
+background: #020455;
 text-align: left;
 padding: 1em 0;
 }
@@ -385,7 +385,7 @@ font-size: 1em;
 font-family: 'Source Sans Pro', sans-serif;
 }
 .copywrite p a{
-color:#FFC600;
+color:#98ffe3;
 font-family: 'Source Sans Pro', sans-serif;
 }
 .copywrite p a:hover{
