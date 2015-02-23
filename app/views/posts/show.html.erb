@@ -7,10 +7,10 @@
 <p>
   <strong>Text:</strong><br>
   <%= @post.body.html_safe %><br>
-  <% if @post.videourl.length > 0 %>
-    <embed width="420" height="315" src=<%= @post.videourl %> > <br>
-  <% end %>
-  
+  <%# if @post.videourl.length > 0 %>
+    <!-- <embed width="420" height="315" src=<%= @post.videourl %> > <br> -->
+  <%# end %>
+
 </p>
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
@@ -18,7 +18,7 @@
     <strong>Comment by:</strong>
     <%= comment.user_id %>
   </p>
- 
+
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
@@ -30,7 +30,7 @@
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
-   <%= f.hidden_field :user_id, :value => current_user.email %> 
+   <%= f.hidden_field :user_id, :value => current_user.email %>
   </p>
   <p>
     <%= f.label :comment %><br>
@@ -41,10 +41,10 @@
   </p>
 <% end %>
 
- 
 
-<%= link_to 'Back', posts_path(@post) %> 
-<% else %> 
+
+<%= link_to 'Back', posts_path(@post) %>
+<% else %>
   <p>You are not signed in.</p>
   <%= link_to 'Login', new_user_session_path %>
 <%end%>
