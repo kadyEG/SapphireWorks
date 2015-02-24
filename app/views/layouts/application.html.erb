@@ -97,11 +97,13 @@
     <div class="content">
       <div class="container">
         <div class="content-grids">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-
+          <!-- <p class="notice"><%#= notice %></p> -->
+          <script type = "text/javascript" charset="utf-8">
+          $.growl.notice({ message: <%= notice %> });
+          $.growl.warning({ message: <%= alert %> });
+          </script>
+          <!-- <p class="alert"><%#= alert %></p> -->
           <%= yield %>
-
           <div class="clearfix"></div>
         </div>
       </div>

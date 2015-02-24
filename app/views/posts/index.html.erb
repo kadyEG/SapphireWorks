@@ -2,18 +2,42 @@
 <!-- Handle if user authinticated or admin  -->
 <!-- <%#= link_to 'New post', new_post_path %> -->
 
-
-<div class="content-grid">
-  <% @posts.each do |post| %>
-    <div class="content-grid-head">
-      <!-- TODO Add date and authour  -->
-      <div class="clearfix"></div>
-    </div>
-    <div class="content-grid-info">
-      <h3><%= link_to post.title , post_path(post) %></h3>
-      <p>
-        <%= truncate(post.body,:length => 1000 , :omission => '...') %>
-      </p>
-    </div>
-  <% end %>
+<div class="col-md-8 content-main">
+  <div class="content-grid-sec">
+    <% @posts.each do |post| %>
+      <div class="content-grid">
+        <div class="content-grid-head">
+          <!-- TODO Add date and authour  -->
+          <div class="clearfix"></div>
+        </div>
+        <div class="content-grid-info">
+          <h3><%= link_to post.title , post_path(post) %></h3>
+          <p>
+            <%= truncate(post.body,:length => 1000 , :omission => '...') %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<div class="col-md-4 content-main-right">
+  <!-- TODO Search goes here -->
+  <div class="search">
+    <h3>SEARCH HERE</h3>
+    <form>
+      <input type="text" value="" onfocus="this.value=''" onblur="this.value=''">
+      <input type="submit" value="">
+    </form>
+  </div>
+  <!-- TODO Add categories here -->
+  <div class="categories">
+    <h3>CATEGORIES</h3>
+    <li class="active"><a href="#">Donec quis dui at dolor tempor</a>
+    </li>
+    <li><a href="#">Vestibulum commodo felis quis tort</a>
+    </li>
+    <li><a href="#">Fusce pellentesque suscipit</a>
+    </li>
+</div>
+  </div>
