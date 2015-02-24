@@ -22,4 +22,5 @@ class ProfilesController < ApplicationController
 
   def aly
   end
+  
 end
