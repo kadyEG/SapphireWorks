@@ -1447,4 +1447,10 @@ font-size: 0.8em;
 padding: 0.3em 1em;
 font-size: 0.8em;
 }
+
+#flash-notice {
+  top:0;
+  width:100%;
+}
+
 }

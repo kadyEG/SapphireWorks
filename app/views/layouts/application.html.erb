@@ -97,12 +97,9 @@
     <div class="content">
       <div class="container">
         <div class="content-grids">
-          <!-- <p class="notice"><%#= notice %></p> -->
-          <script type = "text/javascript" charset="utf-8">
-          $.growl.notice({ message: <%= notice %> });
-          $.growl.warning({ message: <%= alert %> });
-          </script>
-          <!-- <p class="alert"><%#= alert %></p> -->
+          <!-- TODO Those alerts should be passed to the bootstrap growl -->
+          <p ><%= notice %></p>
+          <p ><%= alert %></p>
           <%= yield %>
           <div class="clearfix"></div>
         </div>
