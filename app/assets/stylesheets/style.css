@@ -227,7 +227,7 @@ color:#E82806;
 padding:0;
 }
 .search {
-background:#EB5A41;
+background:#110073;
 padding: 1.8em;
 }
 .search h3{
@@ -245,7 +245,7 @@ outline: none;
 width: 85%;
 font-weight:400;
 font-size:1em;
-background:#F4725C;
+background:#26309c;
 font-family: 'Source Sans Pro', sans-serif;
 }
 .search input[type="submit"] {
@@ -1449,5 +1449,9 @@ padding: 0.3em 1em;
 font-size: 0.8em;
 }
 
+}
 
+
+.form-input {
+  margin:0px 20px 20px 20px;
 }
