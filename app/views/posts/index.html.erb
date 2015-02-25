@@ -1,8 +1,9 @@
 <!-- <%# if user_signed_in? %> -->
 <!-- Handle if user authinticated or admin  -->
 <!-- <%#= link_to 'New post', new_post_path %> -->
-<hr>
-<hr>
+<!-- this is to include Google Share Button -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 <div class="col-md-8 content-main">
 
@@ -23,6 +24,10 @@
           <p>
             <%= truncate(post.body,:length => 1000 , :omission => '...') %>
           </p>
+          <div class="social-item">
+          	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>
+          </div>
         </div>
       </div>
 
