@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
 
-
   def index
 		@posts = Post.all
 	end
@@ -15,10 +14,6 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		# @post = Post.new(params[:post])
-
-		# @post.save
-		# redirect_to @post
 		@post = Post.new(post_params)
 
 		if @post.save
@@ -31,6 +26,7 @@ class PostsController < ApplicationController
 
 	private
 	def post_params
+    # FIXME videourl needed ?
 		params.require(:post).permit(:title, :body, :videourl)
 	end
 

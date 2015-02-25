@@ -1,8 +1,0 @@
-
-<div class="profile-details" align="center">
-<%= image_tag 'dummypic.png' %>
-<h1>Sherif Mowafy</h1>
-<p>Hello there</p>
-</div>
-
-
