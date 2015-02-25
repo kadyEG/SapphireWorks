@@ -169,16 +169,17 @@ width:100%;
 }
 a.bttn{
 color:#fff;
-background:#EB5A41;
+background:#2e2bd2;
 padding:0.7em 0.9em;
 text-decoration:none;
 font-size:1em;
 display:inline-block;
 margin-top:1em;
+margin-bottom:2em;
 }
 a.bttn:hover{
 color:#EB5A41;
-background:#FFC600;
+  background:#8afff5;
 }
 .content-grid-sec{
 padding: 1em 18px 0 18px;
@@ -1448,9 +1449,5 @@ padding: 0.3em 1em;
 font-size: 0.8em;
 }
 
-#flash-notice {
-  top:0;
-  width:100%;
-}
 
 }
