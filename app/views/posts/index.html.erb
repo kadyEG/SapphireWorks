@@ -22,7 +22,7 @@
         <div class="content-grid-info">
           <h3><%= link_to post.title , post_path(post) %></h3>
           <p>
-            <%= truncate(post.body,:length => 1000 , :omission => '...') %>
+            <%= truncate(post.body.html_safe,:length => 1000 , :omission => '...') %>
           </p>
           <div class="social-item">
 			<%= content_tag(:div,"",class: 'fb-share-button',data: {href: post_path(post), layout: 'button'}) %>
