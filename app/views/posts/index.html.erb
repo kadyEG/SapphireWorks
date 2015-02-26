@@ -44,10 +44,14 @@
   <!-- TODO Search goes here -->
   <div class="search">
     <h3>SEARCH HERE</h3>
-    <form>
-      <input type="text" value="" onfocus="this.value=''" onblur="this.value=''">
-      <input type="submit" value="">
-    </form>
+
+  <%= form_tag posts_path, :method => 'get' do %>
+
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "", :name => nil %>
+
+  <% end %>
+
   </div>
   <!-- TODO Add categories here -->
   <!-- <div class="categories">
