@@ -1,12 +1,29 @@
+<<<<<<< HEAD
+=======
+<!-- this is to include Google Share Button -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<% if user_signed_in? %>
+>>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
- 
+ <br>
 <p>
-  <strong>Text:</strong>
-  <%= @post.body %>
+  <strong>Text:</strong><br>
+  <%= @post.body.html_safe %><br>
   
+  	<div class="social-item">
+          	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>
+    </div>
+
+  <%# if @post.videourl.length > 0 %>
+    <!-- <embed width="420" height="315" src=<%= @post.videourl %> > <br> -->
+  <%# end %>
+
 </p>
 
 <h2>Comments</h2>
@@ -15,7 +32,7 @@
     <strong>Comment by:</strong>
     <%= User.find(comment.user_id).email %>
   </p>
- 
+
   <p>
     <strong>Comment:</strong>
     <%= comment.body %>
@@ -39,7 +56,11 @@
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
+<<<<<<< HEAD
    <%= f.hidden_field :user_id, :value => current_user.id %> 
+=======
+   <%= f.hidden_field :user_id, :value => current_user.email %>
+>>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
   </p>
   <p>
     <%= f.label :comment %><br>
@@ -48,6 +69,7 @@
   <p>
     <%= f.submit %>
   </p>
+<<<<<<< HEAD
   <%= link_to 'Back', posts_path(@post) %> 
 <%end%>
  
@@ -57,4 +79,14 @@
   <h3>Please login to add comment.</h3>
   <%= link_to 'Login  ', new_user_session_path %>
 <%= link_to 'Back', posts_path(@post) %> 
+=======
+<% end %>
+
+
+
+<%= link_to 'Back', posts_path(@post) %>
+<% else %>
+  <p>You are not signed in.</p>
+  <%= link_to 'Login', new_user_session_path %>
+>>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
 <%end%>

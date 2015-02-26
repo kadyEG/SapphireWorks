@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>New Post</h1>
 
 <% if user_signed_in? %>
@@ -33,3 +34,59 @@
  
 
 
+=======
+<br>
+
+<% if user_signed_in? && current_user.authorized? %>
+<h2 style="text-align:center;">New post</h2>
+
+<%= form_for :post, url: posts_path do |f| %>
+
+  <div class="form-input">
+    <%= f.label :title , "Title : "%>
+    <br>
+    <%= f.text_field :title , :class => 'form-control' , :style => "width:75%;" %>
+
+  <br>
+  <br>
+  <br>
+
+
+    <%= f.text_area :body, :class => "tinymce", :rows => 40, :cols => 120 %>
+    <%= tinymce %>
+
+    <br>
+
+    <%= f.label :videourl , 'Video URL : ' %><br>
+    <%= f.text_field :videourl , :class => 'form-control' , :style => "width:75%;" %><br><br>
+    <%= f.submit 'Save post' , :class => "btn btn-default"%>
+
+  </div>
+
+<% end %>
+
+  <% elsif user_signed_in? %>
+    <!-- Not authorized ? Good luck :( -->
+    <h1 style="text-align:center;">Sorry,you don't have permissions to view this page</h1>
+
+    <hr>
+    <hr>
+
+    <div style="text-align:center;">
+    <%= link_to 'Back', posts_path(@post) , :class => 'bttn' %>
+    </div>
+
+ <% else %>
+  <!-- Not signed in ? Login first -->
+  <h1 style="text-align:center;">You are not signed in.</h1>
+
+  <hr>
+  <hr>
+
+  <span style="display:table; margin:0 auto;">
+    <%= link_to 'Login', new_user_session_path , :class => 'bttn' , :style => "margin:0 15px 0 0"%>
+    <%= link_to 'Back', posts_path(@post) , class: 'bttn' , :style => "margin-left:15px;" %>
+  </span>
+
+<% end %>
+>>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73

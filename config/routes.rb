@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'profiles/index'
+
+  get 'profiles/sherif'
+
+  get 'profiles/kady'
+
+  get 'profiles/abdelrahman'
+
+  get 'profiles/yassin'
+
+  get 'profiles/hussein'
+
+  get 'profiles/mohamed'
+
+  get 'profiles/aly'
+
   # get 'guest/index'
   devise_for :users, :controllers => { registrations: 'registrations' }
 
@@ -7,8 +23,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :posts do
   resources :comments
-end
-  root to: "guest#index"
+  end
+  root to: "posts#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

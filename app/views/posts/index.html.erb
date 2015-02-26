@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Home</h1>
   
   <%= link_to 'New post', new_post_path %>
@@ -37,3 +38,64 @@
   <p>You are not signed in.</p>
   <%= link_to 'Login', new_user_session_path %>
   <%end%>
+=======
+<!-- <%# if user_signed_in? %> -->
+<!-- Handle if user authinticated or admin  -->
+<!-- <%#= link_to 'New post', new_post_path %> -->
+<!-- this is to include Google Share Button -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+<div class="col-md-8 content-main">
+
+  <div class="content-grid-sec">
+
+  <% if user_signed_in? && current_user.authorized? %>
+    <%= link_to 'New' , {:action => 'new'} , :class => 'bttn' %>
+  <% end %>
+
+    <% @posts.each do |post| %>
+      <div class="content-grid">
+        <div class="content-grid-head">
+          <!-- TODO Add date and authour  -->
+          <div class="clearfix"></div>
+        </div>
+        <div class="content-grid-info">
+          <h3><%= link_to post.title , post_path(post) %></h3>
+          <p>
+            <%= truncate(post.body,:length => 1000 , :omission => '...') %>
+          </p>
+          <div class="social-item">
+          	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-4 content-main-right">
+  <!-- TODO Search goes here -->
+  <div class="search">
+    <h3>SEARCH HERE</h3>
+    <form>
+      <input type="text" value="" onfocus="this.value=''" onblur="this.value=''">
+      <input type="submit" value="">
+    </form>
+  </div>
+  <!-- TODO Add categories here -->
+  <div class="categories">
+    <h3>CATEGORIES</h3>
+    <li class="active"><a href="#">Donec quis dui at dolor tempor</a>
+    </li>
+    <li><a href="#">Vestibulum commodo felis quis tort</a>
+    </li>
+    <li><a href="#">Fusce pellentesque suscipit</a>
+    </li>
+</div>
+  </div>
+>>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
