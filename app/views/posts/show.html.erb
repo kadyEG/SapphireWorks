@@ -13,8 +13,8 @@
   <%= @post.body.html_safe %><br>
   
   	<div class="social-item">
-          	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>
+          	<%= content_tag(:div,"",class: 'fb-share-button',data: {href: post_path(post), layout: 'button'}) %>
+            <%= content_tag("g:plus","",action: 'share',data: {href: post_path(post), align: 'left'}) %>
     </div>
 
   <%# if @post.videourl.length > 0 %>
