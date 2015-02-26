@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to @post
 		else
+      flash[:alert] = "Make sure that you filled in the title and body"
 			render 'new'
 		end
 	end
