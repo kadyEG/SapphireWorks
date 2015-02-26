@@ -2,7 +2,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
-<% if user_signed_in? %>
+
 <p>
   <strong>Tag:</strong>
   <%= @post.title %>
@@ -36,7 +36,7 @@
 <% end %>
 
 
-
+<% if user_signed_in? %>
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
