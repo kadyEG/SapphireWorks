@@ -55,6 +55,10 @@
               <!-- Checking if user is logged in then add logout tab , and vice-versa -->
               <% if user_signed_in? %>
                 <li>
+                  <%= link_to 'Settings', edit_user_registration_path %>
+                </li>
+                
+                <li>
                   <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
                 </li>
               <% else %>
@@ -88,6 +92,11 @@
             <li>
               <%= link_to 'Team', profiles_index_path %>
             </li>
+            <% if user_signed_in? && current_user.authorized? %>
+              <li>
+                <%= link_to 'New Post', '/posts/new' %>
+              </li>
+            <% end %>
             <div class="clearfix"></div>
           </ul>
         </div>

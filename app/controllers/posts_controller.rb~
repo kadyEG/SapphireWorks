@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+<<<<<<< HEAD
 
     @posts = Post.all
   end
@@ -35,6 +36,9 @@ private
   end
 
 		@posts = Post.all
+=======
+    @posts = Post.search(params[:search])
+>>>>>>> 71cfb8677c237db378a8abc9bef835a01d891aa5
 	end
 
 
@@ -49,6 +53,11 @@ private
 	def create
 		@post = Post.new(post_params)
 
+<<<<<<< HEAD
+=======
+    @post.user_id = current_user.id
+
+>>>>>>> 71cfb8677c237db378a8abc9bef835a01d891aa5
 		if @post.save
 			redirect_to @post
 		else
@@ -64,5 +73,8 @@ private
 		params.require(:post).permit(:title, :body, :videourl)
 	end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71cfb8677c237db378a8abc9bef835a01d891aa5
 end

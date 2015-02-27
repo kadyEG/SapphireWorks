@@ -3,7 +3,7 @@
 <%= image_tag 'mowafy.jpg' %>
 <h1>Sherif Mowafy</h1>
 <p>Computer Science and Engineering student at the German Universty in cairo</p>
-<p>sherif.mowafy@gmail.com</p>
+<p>elkadyabdelrahman@gmail.com</p>
 <p id='team-member-info'>Mobile and web junior developer , competitive programmer and guitar player</p>
 <hr>
 </div>
