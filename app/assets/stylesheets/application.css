@@ -12,6 +12,5 @@
  *
  *= require bootstrap
  *= require style
- *= require_tree .
  *= require_self
  */
