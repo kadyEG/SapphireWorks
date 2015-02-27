@@ -1,44 +1,4 @@
-<<<<<<< HEAD
-<h1>Home</h1>
-  
-  <%= link_to 'New post', new_post_path %>
-  <% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-  <%end%>
-<table>
-  <tr>
-    <th>Tag</th>
-    <th>Text</th>
-    <th>Posted By</th>
-    <th colspan="10"></th>
-  </tr>
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title[0,30] %></td>
-      <td><%= post.body[0,30]%></td>
-      <td><%= User.find(post.user_id).email %></td>
-  
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <% if user_signed_in? %>
-
-  <% if post.user_id == current_user.id %>
-  <p>
-       <td><%= link_to 'Delete post', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-   <%else %>
-    <% end%>
-      <%end%>
-  <% end %>
-</table>
-<% if user_signed_in? %>
-<% else %>
-  <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
-  <%end%>
-=======
 <!-- <%# if user_signed_in? %> -->
 <!-- Handle if user authinticated or admin  -->
 <!-- <%#= link_to 'New post', new_post_path %> -->
@@ -112,8 +72,4 @@
     </li>
   </div> -->
 </div>
-<<<<<<< HEAD
   </div>
->>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
-=======
->>>>>>> 71cfb8677c237db378a8abc9bef835a01d891aa5

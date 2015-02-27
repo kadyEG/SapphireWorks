@@ -1,45 +1,3 @@
-<<<<<<< HEAD
-<h1>New Post</h1>
-
-<% current_user.authorized = true %>
-<% if user_signed_in? %>
-<% if current_user.authorized == true %>
-
-<%= form_for :post, url: posts_path do |f| %>
-  <%= f.hidden_field :user_id, :value => current_user.id %> 
-  <p>
-    <%= f.label :tag %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p> <% current_user.id %></p>
-  <p>
-    <%= f.label :post %><br>
-    <%= f.text_area :body %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-  
-<% end %>
- 
- <% else %>
-<%end%>  
- <% if user_signed_in? %>
- <% if current_user.authorized == false %>
-
- <p><strong> YOU ARE NOT AUTHORIZED BY THE ADMIN TO MAKE A NEW POST</strong></p>
- <%= link_to 'Back', posts_path(@post) %> 
- <%end %>
-
- <%else%>
-  <%= link_to 'Login', new_user_session_path %>
- <%= link_to 'Back', posts_path(@post) %> 
- <%end%>
-<%end %> 
-
-
-=======
 <br>
 
 <% if user_signed_in? && current_user.authorized? %>
@@ -94,4 +52,3 @@
   </span>
 
 <% end %>
->>>>>>> 07d8f37859a7f4e90515684fccefc6847f6d2b73
