@@ -1,0 +1,4 @@
+class ChangeAuthorizedInUser < ActiveRecord::Migration
+  def change
+  end
+end
