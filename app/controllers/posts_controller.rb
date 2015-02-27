@@ -45,6 +45,7 @@ private
 
 	def show
 		@post = Post.find(params[:id])
+		@categ = Post.select(:title).distinct
 	end
 
 	def new
