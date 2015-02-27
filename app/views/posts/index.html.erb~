@@ -57,7 +57,7 @@
  <h3>Categories</h3>
  <ul>
  <% @categ.each do |cat| %>
- <li><%= link_to cat.title, :search => cat.title %></li>
+ <li><%= link_to cat, :search => cat %></li>
  <% end %>
  </ul>
   <!-- TODO Add categories here -->

@@ -2,8 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.search(params[:search])
-    @categ = Post.select(:title).distinct
-  end
+	end
 
 
 	def show
