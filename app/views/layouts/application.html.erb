@@ -92,11 +92,6 @@
             <li>
               <%= link_to 'Team', profiles_index_path %>
             </li>
-            <% if user_signed_in? && current_user.authorized? %>
-              <li>
-                <%= link_to 'New Post', '/posts/new' %>
-              </li>
-            <% end %>
             <div class="clearfix"></div>
           </ul>
         </div>
