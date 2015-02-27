@@ -1,60 +1,87 @@
 <!-- this is to include Google Share Button -->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-
-<p>
-  <strong>Tag:</strong>
-  <%= @post.title %>
-</p>
- <br>
-<p>
-  <strong>Text:</strong><br>
-  <%= @post.body.html_safe %><br>
-
-  	<div class="social-item">
-          	<%= content_tag(:div,"",class: 'fb-share-button',data: {href: post_path(@post), layout: 'button'}) %>
-            <%= content_tag("g:plus","",action: 'share',data: {href: post_path(@post), align: 'left'}) %>
+<div class="content">
+   <div class="container">
+     <div class="content-grids">
+       <div class="col-md-8 content-main">
+         <div class="content-grid">
+           <div class="content-grid-head">
+             <h3>Post</h3>
+              <h4><%=@post.created_at%>,Posted by: <a href="#"><%= User.find(@post.user_id).email %></a></h4>
+             <div class="clearfix"></div>
+           </div>
+              <div class="social-item">
+            <%= content_tag(:div,"",class: 'fb-share-button',data: {href: post_path(@post), layout: 'button'}) %>
+            <%= content_tag("g:plus","",action: 'share',data: {href: post_path(@post), layout: 'button' }) %>
     </div>
+           <div class="content-grid-single">
+             <h3><%= @post.title %></h3>
+             <p><%= @post.body.html_safe %></p>
+              <div class="content-form">
+              <% if user_signed_in? %>
+               <h3>Leave a comment</h3>
+               <%= form_for([@post, @post.comments.build]) do |f| %>
+              <p>
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+              </p>
+               <p>
+               <%= f.text_area :body %>
+                </p>
+                <p>
+                <%= f.submit %>
+                </p>
+               <% end %>
+               <%= link_to 'Back', posts_path(@post), :class => 'bttn'%>
+               <% else %>
+               <p>You are not signed in.</p>
+               <%= link_to 'Login', new_user_session_path, :class => 'bttn'%>
+              <%end%>
+              </div>
 
-  <%# if @post.videourl.length > 0 %>
-    <!-- <embed width="420" height="315" src=<%= @post.videourl %> > <br> -->
-  <%# end %>
+              <div class="comments">
+              <h3>Comments</h3>
+               <% @post.comments.each do |comment| %>
+                 <% if comment.user_id.to_i != 0 %>
+                <div class="comment-grid">
+               <img src="\assets\dummypic.png" style="max-height: 80px; max-width: 80px;" />
+                 <div class="comment-info">
+                 <h4><%=  User.find(comment.user_id).email %></h4>
+                 <p><%= comment.body %></p>
+                 </div>
+                 <div class="clearfix"></div>
+               </div>
+               <%end%>
+               <% end %>
+              </div>
+            </div>
+           
+         </div>            
+       </div>
+       
+       <div class="col-md-4 content-main-right">
+         <div class="search">
+             <h3>SEARCH HERE</h3>
+            <form>
+              <input type="text" value="" onfocus="this.value=''" onblur="this.value=''">
+              <input type="submit" value="">
+            </form>
+         </div>
+         <div class="categories">
+           <h3>CATEGORIES</h3>
+           <li class="active"><a href="#">Donec quis dui at dolor tempor</a></li>
+           <li><a href="#">Vestibulum commodo felis quis tort</a></li>
+           <li><a href="#">Fusce pellentesque suscipit</a></li>
+         </div>
+         <div class="archives">
+           <h3>ARCHIVES</h3>
+           <li class="active"><a href="#">July 2014</a></li>
+           <li><a href="#">June 2014</a></li>
+           <li><a href="#">May 2014</a></li>
+         </div>
+       </div>
+       <div class="clearfix"></div>
+     </div>
+   </div>
+</div>
+</div>
 
-</p>
-<h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong>Comment by:</strong>
-    <%= comment.user_id %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
-
-
-<% if user_signed_in? %>
-<h2>Add a comment:</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-   <%= f.hidden_field :user_id, :value => current_user.email %>
-  </p>
-  <p>
-    <%= f.label :comment %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-
-
-<%= link_to 'Back', posts_path(@post) %>
-<% else %>
-  <p>You are not signed in.</p>
-  <%= link_to 'Login', new_user_session_path %>
-<%end%>
