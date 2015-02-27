@@ -17,4 +17,4 @@
 //= require easing
 //= require move-top
 //= require_tree .
-//= require tinymce-jquery
+//= require tinymce
