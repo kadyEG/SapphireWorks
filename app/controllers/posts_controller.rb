@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-<<<<<<< HEAD
+
 
     @posts = Post.all
   end
@@ -37,11 +37,10 @@ private
 
 		@posts = Post.all
 	end
-=======
+
     @posts = Post.search(params[:search])
     @categ = Post.select(:title).distinct
-  end
->>>>>>> 71cfb8677c237db378a8abc9bef835a01d891aa5
+
 
 
 	def show
