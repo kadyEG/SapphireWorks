@@ -2,9 +2,9 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   
-  	<div class="social-item">
+  	<!--<div class="social-item">
           	<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>
+			<g:plus action="share" data-href="http://google.com" data-align="left"></g:plus>-->
 <div class="content">
    <div class="container">
      <div class="content-grids">
@@ -18,7 +18,7 @@
               <div class="social-item">
             <%= content_tag(:div,"",class: 'fb-share-button',data: {href: post_path(@post), layout: 'button'}) %>
             <%= content_tag("g:plus","",action: 'share',data: {href: post_path(@post), layout: 'button' }) %>
-    </div>
+    		</div>
            <div class="content-grid-single">
              <h3><%= @post.title %></h3>
              <p><%= @post.body.html_safe %></p>
