@@ -6,7 +6,6 @@ class PostsController < ApplicationController
     @categ = Post.select(:title).distinct
   end
 
-
   def show
     @post = Post.find(params[:id])
     @categ = Post.select(:title).distinct
@@ -36,10 +35,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+	def destroy
+	  @post = Post.find(params[:id])
+	  @post.destroy
+	 
+	  redirect_to posts_path
+	end
+
 
   private
   def post_params
     # FIXME videourl needed ?
+
     params.require(:post).permit(:title, :body, :videourl)
   end
 
